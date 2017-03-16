@@ -1,9 +1,10 @@
 "use strict";
 let NRP = require("node-redis-pubsub");
 let redis_host = process.env.REDIS_HOST || "127.0.0.1";
+let redis_port = process.env.REDIS_PORT || 6379;
 
 let config = {
-  port: 6379,
+  port: redis_port,
 	host: redis_host,
 	scope: "demo"
 };
