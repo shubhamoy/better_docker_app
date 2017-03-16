@@ -1,4 +1,5 @@
 # Better Docker App
+![Better Docker App](https://lh3.googleusercontent.com/yXOp4bj4YMYno_giDzoDfj4milvxRYAx_1GWL4cJkQlSZrpeqIyKtzO8R41RdgRcKtN59zrEU3VOnQV1G0p-3Sh6T1lLoBF_yaBybwFKStDqq_QjR0VNRcSMpN7LuI85VdbArVM=w1119-h699-no)
 An app built using node.js, socket.io and redis for demonstrating the simplicity of docker. 
 
 # How to use the app?
