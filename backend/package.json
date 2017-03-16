@@ -1,0 +1,28 @@
+{
+  "name": "backend-docker-app",
+  "version": "0.1.0",
+  "description": "Backend of a Docker App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhamoy/better_docker_app.git"
+  },
+  "keywords": [
+    "docker",
+    "nodejs",
+    "socket.io",
+    "redis"
+  ],
+  "author": "Shubhamoy Chakrabarty <me@shubhamoy.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/shubhamoy/better_docker_app/issues"
+  },
+  "homepage": "https://github.com/shubhamoy/better_docker_app#readme",
+  "dependencies": {
+    "node-redis-pubsub": "^1.0.2"
+  }
+}
