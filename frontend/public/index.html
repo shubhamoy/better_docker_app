@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Basic Docker App</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"> </script>
+        <script src='/socket.io/socket.io.js'></script>
+        <script>
+            var socket = io.connect("");
+
+            socket.on('tickerData', function(data) {             
+              myLineChart.data.labels.push(["REC", "TATA", "GAIL"]);
+              myLineChart.data.datasets[0].data.push(data[0].rdata);
+              myLineChart.data.datasets[1].data.push(data[1].tdata);
+              myLineChart.data.datasets[2].data.push(data[2].gdata);
+              
+              ( myLineChart.data.datasets[0].data.length > 30 ? myLineChart.data.datasets[0].data.splice(0,10) : '');
+              ( myLineChart.data.datasets[1].data.length > 30 ? myLineChart.data.datasets[1].data.splice(0,10) : '');
+              ( myLineChart.data.datasets[2].data.length > 30 ? myLineChart.data.datasets[2].data.splice(0,10) : '');
+              (myLineChart.data.labels.length > 29 ? myLineChart.data.labels.splice(0, 10) : '');
+              myLineChart.update();
+            });
+            socket.on('error', console.error.bind(console));
+            socket.on('message', console.log.bind(console));
+        </script>
+    </head>
+    <body>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <script>
+        config = {
+                responsive: true,
+                scales: {
+                    xAxes: [{
+                        display: false
+                    }]
+                },
+                type: 'line',
+               data: {
+                    labels: [],
+                    datasets: [{
+                        label: "Symbol: REC",
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [
+                            0
+                        ],
+                        fill: false,
+                    },
+                    {
+                        label: "Symbol: TATA",
+                        backgroundColor: 'rgb(125, 99, 132)',
+                        borderColor: 'rgb(125, 99, 132)',
+                        data: [
+                            0
+                        ],
+                        fill: false,
+                    },
+                    {
+                        label: "Symbol: GAIL",
+                        backgroundColor: 'rgb(150, 79, 180)',
+                        borderColor: 'rgb(150, 79, 180)',
+                        data: [
+                            0
+                        ],
+                        fill: false,
+                    }]
+                },
+                options: {        
+                    title: {
+                    display: true,
+                    text: 'Sweet Realtime Share Ticker Startup'
+                }},
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Month'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Value'
+                        },
+                        ticks: {
+                        autoSkip: true,
+                        maxTicksLimit: 20
+                    }
+                    }]
+                }
+            };
+        window.onload = function() {
+            var ctx = document.getElementById("myChart");
+            var myLineChart = new Chart(ctx, config);
+            window.myLineChart = myLineChart;
+            };
+        </script>        
+    </body>
+</html>
