@@ -1,6 +1,6 @@
 {
   "name": "frontend-docker-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Frontend of a Docker App",
   "main": "app.js",
   "scripts": {
