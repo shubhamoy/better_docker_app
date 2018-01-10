@@ -16,8 +16,8 @@ function getRandomInt(min, max) {
 
 setInterval(() => {
   let recData = getRandomInt(50, 100);
-	let tataData = getRandomInt(75, 150);
-	let gailData = getRandomInt(25, 125);
+  let tataData = getRandomInt(75, 150);
+  let gailData = getRandomInt(25, 125);
 
 	server.emit("tickerData", [{rdata: recData},
                              {tdata: tataData},
