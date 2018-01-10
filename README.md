@@ -10,9 +10,9 @@ An app built using node.js, socket.io and redis for demonstrating the simplicity
 
 # How to use the app?
 * Your system must have docker installed. https://docs.docker.com/engine/installation/
-* Clone/Download the repo 
-* Open your terminal and switch to this repo 
-* Run `bash start.sh`
+* Clone/Download this repo 
+* Run `docker-compose up`. Ensure no service is running at port 3000.
+* Open your browser at http://127.0.0.1:3000
 
 # Queries
 Open an issue or drop a mail at me@shubhamoy.com
