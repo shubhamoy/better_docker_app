@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 # Install app dependencies & pm2 globally
-RUN npm install && npm install pm2 -g
+RUN npm install pm2 -g
 
 # Start app with PM2
 CMD ["pm2-docker", "start", "npm", "--", "start"]
