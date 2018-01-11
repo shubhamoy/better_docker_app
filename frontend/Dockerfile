@@ -11,10 +11,10 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 # Install app dependencies & PM2
-RUN npm install && npm install pm2 -g
+RUN npm install pm2 -g
 
 # Start app with PM2
 CMD ["pm2-docker", "start", "npm", "--", "start"]
 
-# Open port
+# Open port 3000
 EXPOSE 3000
